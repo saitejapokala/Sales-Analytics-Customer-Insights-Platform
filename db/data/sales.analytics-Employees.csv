@@ -1,0 +1,51 @@
+ID,employeeId,firstName,lastName,email,designation,salary,joiningDate,region_ID
+E001,EMP001,Priya,Sharma,priya.sharma@sales.com,Regional Manager,59806,2021-12-20,R008
+E002,EMP002,Rohit,Patel,rohit.patel@sales.com,Senior Sales Executive,54678,2023-10-19,R006
+E003,EMP003,Arjun,Joshi,arjun.joshi@sales.com,Regional Manager,110677,2021-06-16,R007
+E004,EMP004,Rohit,Nair,rohit.nair@sales.com,Sales Executive,70182,2022-02-16,R006
+E005,EMP005,Kiran,Gupta,kiran.gupta@sales.com,Regional Manager,130512,2021-01-15,R003
+E006,EMP006,Anjali,Singh,anjali.singh@sales.com,Area Manager,119830,2023-02-25,R003
+E007,EMP007,Rahul,Kumar,rahul.kumar@sales.com,Area Manager,98715,2022-11-06,R008
+E008,EMP008,Vijay,Patel,vijay.patel@sales.com,Regional Manager,81335,2021-01-21,R002
+E009,EMP009,Meera,Nair,meera.nair@sales.com,Regional Manager,114334,2022-09-26,R003
+E010,EMP010,Sneha,Gupta,sneha.gupta@sales.com,Senior Sales Executive,68223,2023-12-27,R003
+E011,EMP011,Anjali,Kumar,anjali.kumar@sales.com,Sales Executive,124085,2022-02-19,R007
+E012,EMP012,Priya,Singh,priya.singh@sales.com,Regional Manager,122347,2023-10-24,R003
+E013,EMP013,Priya,Sharma,priya.sharma@sales.com,Sales Executive,93120,2021-04-02,R008
+E014,EMP014,Meera,Reddy,meera.reddy@sales.com,Regional Manager,59673,2022-07-12,R001
+E015,EMP015,Rahul,Joshi,rahul.joshi@sales.com,Regional Manager,99409,2024-10-10,R006
+E016,EMP016,Meera,Kumar,meera.kumar@sales.com,Area Manager,72537,2023-06-19,R001
+E017,EMP017,Anjali,Gupta,anjali.gupta@sales.com,Area Manager,123310,2023-04-19,R006
+E018,EMP018,Arjun,Reddy,arjun.reddy@sales.com,Senior Sales Executive,110984,2022-10-25,R004
+E019,EMP019,Anjali,Nair,anjali.nair@sales.com,Sales Executive,57725,2024-05-05,R008
+E020,EMP020,Meera,Joshi,meera.joshi@sales.com,Area Manager,51182,2021-05-04,R001
+E021,EMP021,Sneha,Reddy,sneha.reddy@sales.com,Sales Executive,68455,2020-04-15,R002
+E022,EMP022,Vijay,Joshi,vijay.joshi@sales.com,Area Manager,90375,2020-02-06,R003
+E023,EMP023,Anjali,Kumar,anjali.kumar@sales.com,Sales Executive,125939,2023-07-09,R006
+E024,EMP024,Rohit,Joshi,rohit.joshi@sales.com,Senior Sales Executive,138590,2023-10-10,R003
+E025,EMP025,Rahul,Joshi,rahul.joshi@sales.com,Senior Sales Executive,100860,2022-07-20,R001
+E026,EMP026,Rohit,Singh,rohit.singh@sales.com,Senior Sales Executive,139318,2024-07-21,R008
+E027,EMP027,Kiran,Patel,kiran.patel@sales.com,Sales Executive,144227,2023-06-03,R008
+E028,EMP028,Kiran,Nair,kiran.nair@sales.com,Senior Sales Executive,96704,2020-05-11,R007
+E029,EMP029,Vijay,Patel,vijay.patel@sales.com,Area Manager,110237,2022-10-17,R002
+E030,EMP030,Kiran,Reddy,kiran.reddy@sales.com,Senior Sales Executive,125519,2024-05-09,R001
+E031,EMP031,Amit,Kumar,amit.kumar@sales.com,Area Manager,106458,2023-10-09,R007
+E032,EMP032,Rohit,Kumar,rohit.kumar@sales.com,Sales Executive,130287,2023-10-19,R001
+E033,EMP033,Anjali,Gupta,anjali.gupta@sales.com,Regional Manager,120549,2023-08-15,R003
+E034,EMP034,Sneha,Kumar,sneha.kumar@sales.com,Senior Sales Executive,78241,2020-11-01,R004
+E035,EMP035,Rohit,Sharma,rohit.sharma@sales.com,Sales Executive,106567,2020-12-19,R005
+E036,EMP036,Rahul,Sharma,rahul.sharma@sales.com,Area Manager,77763,2022-03-11,R004
+E037,EMP037,Sneha,Sharma,sneha.sharma@sales.com,Sales Executive,91848,2023-06-28,R005
+E038,EMP038,Sneha,Kumar,sneha.kumar@sales.com,Sales Executive,138937,2022-03-29,R008
+E039,EMP039,Sneha,Sharma,sneha.sharma@sales.com,Sales Executive,117787,2022-10-31,R007
+E040,EMP040,Rahul,Sharma,rahul.sharma@sales.com,Sales Executive,51310,2020-10-26,R004
+E041,EMP041,Kiran,Sharma,kiran.sharma@sales.com,Senior Sales Executive,66206,2022-03-30,R001
+E042,EMP042,Priya,Kumar,priya.kumar@sales.com,Regional Manager,118254,2022-11-27,R008
+E043,EMP043,Meera,Reddy,meera.reddy@sales.com,Senior Sales Executive,85330,2021-04-04,R001
+E044,EMP044,Kiran,Joshi,kiran.joshi@sales.com,Area Manager,123211,2024-05-04,R005
+E045,EMP045,Kiran,Sharma,kiran.sharma@sales.com,Senior Sales Executive,138992,2020-10-11,R008
+E046,EMP046,Rahul,Sharma,rahul.sharma@sales.com,Area Manager,68509,2024-10-27,R007
+E047,EMP047,Anjali,Patel,anjali.patel@sales.com,Senior Sales Executive,102073,2020-08-27,R008
+E048,EMP048,Rahul,Patel,rahul.patel@sales.com,Regional Manager,134176,2020-06-17,R003
+E049,EMP049,Meera,Reddy,meera.reddy@sales.com,Area Manager,110956,2024-02-23,R005
+E050,EMP050,Rahul,Sharma,rahul.sharma@sales.com,Area Manager,122171,2024-01-29,R002
