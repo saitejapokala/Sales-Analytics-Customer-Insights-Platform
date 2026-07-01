@@ -15,12 +15,12 @@ service CatalogService {
 
   entity OrderItems as projection on db.OrderItems;
 
-  action   updateCustomerTier();
+  action   updateCustomerTier() returns String;
 
   action   refreshAnalytics();
 
-  function getTopCustomers() returns array of Customers;
+  function getTopCustomers()    returns array of Customers;
 
-  function getTopProducts()  returns array of Products;
+  function getTopProducts()     returns array of Products;
 
 }
