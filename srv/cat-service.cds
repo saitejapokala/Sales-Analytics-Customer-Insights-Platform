@@ -1,19 +1,21 @@
 using {sales.analytics as db} from '../db/schema';
+using { CV_SALES_ANALYTICS } from '../db/schema';
+
 
 @odata
 service CatalogService {
 
-  entity Regions    as projection on db.Regions;
+  entity Regions        as projection on db.Regions;
 
-  entity Employees  as projection on db.Employees;
+  entity Employees      as projection on db.Employees;
 
-  entity Customers  as projection on db.Customers;
+  entity Customers      as projection on db.Customers;
 
-  entity Products   as projection on db.Products;
+  entity Products       as projection on db.Products;
 
-  entity Orders     as projection on db.Orders;
+  entity Orders         as projection on db.Orders;
 
-  entity OrderItems as projection on db.OrderItems;
+  entity OrderItems     as projection on db.OrderItems;
 
   action   updateCustomerTier() returns String;
 
@@ -23,4 +25,7 @@ service CatalogService {
 
   function getTopProducts()     returns array of Products;
 
+  @readonly
+  entity SalesAnalytics as projection on CV_SALES_ANALYTICS;
+  
 }
