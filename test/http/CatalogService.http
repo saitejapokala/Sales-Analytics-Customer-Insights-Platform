@@ -553,7 +553,7 @@ Authorization: Basic {{username}}:{{password}}
 
 ### SalesAnalytics
 # @name SalesAnalytics_GET
-GET {{server}}/odata/v4/catalog/SalesAnalytics
+GET {{server}}/odata/v4/analytics/SalesAnalytics
 
 
 ### updateCustomerTier

@@ -20,3 +20,6 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at <https://cap.cloud.sap>.
+
+
+Designed and implemented an end-to-end Sales Analytics Platform using SAP CAP, SAP HANA Cloud, SQLScript Procedures, Graphical Calculation Views, and Fiori Elements Analytical applications. Implemented native HANA artifacts for analytical processing and exposed them via OData services.

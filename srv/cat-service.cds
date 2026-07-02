@@ -1,5 +1,5 @@
 using {sales.analytics as db} from '../db/schema';
-using { CV_SALES_ANALYTICS } from '../db/schema';
+
 
 
 @odata
@@ -24,8 +24,5 @@ service CatalogService {
   function getTopCustomers()    returns array of Customers;
 
   function getTopProducts()     returns array of Products;
-
-  @readonly
-  entity SalesAnalytics as projection on CV_SALES_ANALYTICS;
   
 }
