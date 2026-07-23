@@ -80,10 +80,29 @@ context sales.analytics {
 @cds.persistence.exists
 @cds.persistence.calcview
 entity CV_SALES_ANALYTICS {
-    key SALESYEAR     : String(13)  @title: 'SALESYEAR: SALESYEAR';
-    key SALESMONTH    : String(13)  @title: 'SALESMONTH: SALESMONTH';
-        TOTALREVENUE  : Decimal(15) @title: 'TOTALREVENUE: TOTALREVENUE';
-        TOTALPROFIT   : Decimal(15) @title: 'TOTALPROFIT: TOTALPROFIT';
-        TOTALORDERS   : Integer64   @title: 'TOTALORDERS: TOTALORDERS';
-        CUSTOMERCOUNT : Integer64   @title: 'CUSTOMERCOUNT: CUSTOMERCOUNT';
+    key SALESYEAR         : String(13)  @title: 'SALESYEAR: SALESYEAR';
+    key SALESMONTH        : String(13)  @title: 'SALESMONTH: SALESMONTH';
+        TOTALREVENUE      : Decimal(15) @title: 'TOTALREVENUE: TOTALREVENUE';
+        TOTALPROFIT       : Decimal(15) @title: 'TOTALPROFIT: TOTALPROFIT';
+        TOTALORDERS       : Integer64   @title: 'TOTALORDERS: TOTALORDERS';
+        CUSTOMERCOUNT     : Integer64   @title: 'CUSTOMERCOUNT: CUSTOMERCOUNT';
+        AVERAGEORDERVALUE : Decimal(15);
+        REVENUEPERCUSTOMER : Decimal(15);
+        PROFITMARGIN : Decimal(15)
+}
+
+@cds.persistence.exists
+@cds.persistence.calcview
+entity CV_EMPLOYEE_ANALYTICS {
+key     EMPLOYEEID: String(10)  @title: 'EMPLOYEEID: EMPLOYEEID' ; 
+key     SALESYEAR: String(13)  @title: 'SALESYEAR: SALESYEAR' ; 
+key     FIRSTNAME: String(100)  @title: 'FIRSTNAME: FIRSTNAME' ; 
+key     LASTNAME: String(100)  @title: 'LASTNAME: LASTNAME' ; 
+key     DESIGNATION: String(60)  @title: 'DESIGNATION: DESIGNATION' ; 
+key     REGION_ID: String(36)  @title: 'REGION_ID: REGION_ID' ; 
+        TOTALREVENUE: Decimal(15)  @title: 'TOTALREVENUE: NETAMOUNT' ; 
+        TOTALQUANTITY: Integer  @title: 'TOTALQUANTITY: QUANTITY' ;
+        CATEGORY: String(60);
+        TOTALPROFIT: Decimal(15)  @title: 'TOTALPROFIT: PROFIT' ; 
+        TOTALORDERS: Integer64  @title: 'TOTALORDERS: TOTALORDERS' ;
 }

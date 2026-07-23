@@ -94,10 +94,12 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="SALESYEAR" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+    
         <formula>YEAR(&quot;ORDERDATE&quot;)</formula>
+    
       </calculatedViewAttribute>
       <calculatedViewAttribute id="SALESMONTH" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
-        <formula>MONTH(&quot;ORDERDATE&quot;)</formula>
+        <formula>MONTHNAME(&quot;ORDERDATE&quot;)</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="Join_Orders_OrderItems">
@@ -170,6 +172,19 @@
       <formula>1</formula>
       <exceptionAggregationMetadata/>
     </measure>
+  
+    <measure id="PROFITMARGIN" order="9" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="15" scale="2" expressionLanguage="SQL">
+      <formula>(&quot;TOTALPROFIT&quot;/&quot;TOTALREVENUE&quot;)*100</formula>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="AVERAGEORDERVALUE" order="10" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="15" scale="2" expressionLanguage="SQL">
+      <formula>&quot;TOTALREVENUE&quot;/&quot;TOTALORDERS&quot;</formula>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="REVENUEPERCUSTOMER" order="11" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="15" scale="2" expressionLanguage="SQL">
+      <formula>&quot;TOTALREVENUE&quot;/&quot;CUSTOMERCOUNT&quot;</formula>
+      <exceptionAggregationMetadata/>
+    </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions/>
@@ -182,31 +197,31 @@
     
   
     <shape expanded="true" modelObjectName="Projection_Orders" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-275" y="312"/>
+      <upperLeftCorner x="-229" y="438"/>
       <rectangleSize height="30" width="171"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_OrderItems" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-8" y="312"/>
+      <upperLeftCorner x="112" y="438"/>
       <rectangleSize height="30" width="188"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_Products" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="300" y="315"/>
+      <upperLeftCorner x="544" y="438"/>
       <rectangleSize height="30" width="198"/>
     </shape>
     <shape expanded="true" modelObjectName="Join_Orders_OrderItems" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-163" y="168"/>
+      <upperLeftCorner x="-63" y="228"/>
       <rectangleSize height="30" width="199"/>
     </shape>
     <shape modelObjectName="Projection_Orders" modelObjectNameSpace="Join_Orders_OrderItems" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="16" y="16"/>
-      <rectangleSize width="185.86279296875"/>
+      <rectangleSize width="185"/>
     </shape>
     <shape modelObjectName="Projection_OrderItems" modelObjectNameSpace="Join_Orders_OrderItems" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="265.86279296875" y="16"/>
-      <rectangleSize width="193.375"/>
+      <upperLeftCorner x="265" y="16"/>
+      <rectangleSize width="193"/>
     </shape>
     <shape expanded="true" modelObjectName="Join_Products" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="206" y="167"/>
+      <upperLeftCorner x="402" y="215"/>
       <rectangleSize height="30" width="188"/>
     </shape>
     <shape modelObjectName="Join_Orders_OrderItems" modelObjectNameSpace="Join_Products" modelObjectType="JoinNodeInput">

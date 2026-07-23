@@ -1,63 +1,102 @@
 _schema-version: 3.3.0
 ID: Sales_Analytics_Platform
+description: A simple CAP project.
 version: 1.0.0
-description: "A simple CAP project."
+modules:
+- name: Sales_Analytics_Platform-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: Sales_Analytics_Platform-auth
+  - name: Sales_Analytics_Platform-db
+  - name: Sales_Analytics_Platform-destination
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    instances: 1
+  build-parameters:
+    builder: npm-ci
+- name: Sales_Analytics_Platform-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: Sales_Analytics_Platform-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: Sales_Analytics_Platform-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Sales_Analytics_Platform-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - compersonalcustomers.zip
+      name: compersonalcustomers
+      target-path: resources/
+- name: compersonalcustomers
+  type: html5
+  path: app/customers
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: Sales_Analytics_Platform-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      oauth2-configuration:
+        credential-types:
+        - binding-secret
+        - x509
+      tenant-mode: dedicated
+      xsappname: Sales_Analytics_Platform-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+- name: Sales_Analytics_Platform-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: Sales_Analytics_Platform-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+    service: destination
+    service-plan: lite
+- name: Sales_Analytics_Platform-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Sales_Analytics_Platform-html5-service
+    service-plan: app-host
 parameters:
-  enable-parallel-deployments: true
   deploy_mode: html5-repo
+  enable-parallel-deployments: true
 build-parameters:
   before-all:
-    - builder: custom
-      commands:
-        - npm ci
-        - npx cds build --production
-modules:
-  - name: Sales_Analytics_Platform-srv
-    type: nodejs
-    path: gen/srv
-    parameters:
-      instances: 1
-      buildpack: nodejs_buildpack
-    build-parameters:
-      builder: npm-ci
-    provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
-        properties:
-          srv-url: ${default-url}
-    requires:
-      - name: Sales_Analytics_Platform-auth
-      - name: Sales_Analytics_Platform-db
-      - name: Sales_Analytics_Platform-destination
-
-  - name: Sales_Analytics_Platform-db-deployer
-    type: hdb
-    path: gen/db
-    parameters:
-      buildpack: nodejs_buildpack
-    requires:
-      - name: Sales_Analytics_Platform-db
-
-resources:
-  - name: Sales_Analytics_Platform-auth
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: xsuaa
-      service-plan: application
-      path: ./xs-security.json
-      config:
-        xsappname: Sales_Analytics_Platform-${org}-${space}
-        tenant-mode: dedicated
-        oauth2-configuration:
-          credential-types:
-            - "binding-secret"
-            - "x509"
-  - name: Sales_Analytics_Platform-db
-    type: com.sap.xs.hdi-container
-    parameters:
-      service: hana
-      service-plan: hdi-shared
-  - name: Sales_Analytics_Platform-destination
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: destination
-      service-plan: lite
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production

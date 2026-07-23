@@ -9,29 +9,6 @@ class CatalogService extends cds.ApplicationService {
             OrderItems
         } = this.entities;
 
-        this.on('getTopCustomers', async (req) => {
-            const tx = cds.tx(req);
-            const result = await tx.run(
-                SELECT.from(Customers)
-                    .limit(5)
-            );
-            return result;
-        });
-
-        this.on('getTopProducts', async (req) => {
-            const tx = cds.tx(req);
-            return await tx.run(
-                SELECT.from(Products)
-                    .limit(5)
-            );
-        });
-
-        this.on('refreshAnalytics', async () => {
-            console.log("Analytics Refresh Triggered");
-            return {
-                message: "Analytics refreshed successfully."
-            };
-        });
 
         this.on("updateCustomerTier", async (req) => {
             try {
