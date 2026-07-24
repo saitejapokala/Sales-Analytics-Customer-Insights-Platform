@@ -58,6 +58,18 @@ Dimensions:
 <!-- Screenshot placeholder: add sales analytics results at docs/images/sales-analytics-results.png -->
 ![Sales analytics results](docs/images/sales-analytics-results.png)
 
+<!-- Screenshot placeholders: add two additional HANA Database Explorer result images side by side. -->
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/sales-analytics-results-2.png" alt="Sales analytics result 2" />
+    </td>
+    <td width="50%">
+      <img src="docs/images/sales-analytics-results-3.png" alt="Sales analytics result 3" />
+    </td>
+  </tr>
+</table>
+
 ### Employee analytics - `CV_EMPLOYEE_ANALYTICS`
 
 This view attributes sales activity to employees and enriches it with product information. It is intended for sales-force performance analysis across roles, regions, categories, and years.
@@ -85,6 +97,18 @@ Dimensions:
 
 <!-- Screenshot placeholder: add employee analytics results at docs/images/employee-analytics-results.png -->
 ![Employee analytics results](docs/images/employee-analytics-results.png)
+
+<!-- Screenshot placeholders: add two additional HANA Database Explorer result images side by side. -->
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/employee-analytics-results-2.png" alt="Employee analytics result 2" />
+    </td>
+    <td width="50%">
+      <img src="docs/images/employee-analytics-results-3.png" alt="Employee analytics result 3" />
+    </td>
+  </tr>
+</table>
 
 ## Customer-tier procedure
 
