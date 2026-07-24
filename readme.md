@@ -53,10 +53,10 @@ Dimensions:
 | `REVENUEPERCUSTOMER` | `TOTALREVENUE / CUSTOMERCOUNT` |
 
 <!-- Screenshot placeholder: add sales calculation-view dataflow at docs/images/sales-calculation-view.png -->
-![Sales calculation view dataflow - add screenshot](docs/images/sales-calculation-view.png)
+![Sales calculation view dataflow](docs/images/sales-calculation-view.png)
 
 <!-- Screenshot placeholder: add sales analytics results at docs/images/sales-analytics-results.png -->
-![Sales analytics results - add screenshot](docs/images/sales-analytics-results.png)
+![Sales analytics results](docs/images/sales-analytics-results.png)
 
 ### Employee analytics - `CV_EMPLOYEE_ANALYTICS`
 
@@ -81,10 +81,10 @@ Dimensions:
 | `AVERAGEORDERVALUE` | `TOTALREVENUE / TOTALORDERS` |
 
 <!-- Screenshot placeholder: add employee calculation-view dataflow at docs/images/employee-calculation-view.png -->
-![Employee calculation view dataflow - add screenshot](docs/images/employee-calculation-view.png)
+![Employee calculation view dataflow](docs/images/employee-calculation-view.png)
 
 <!-- Screenshot placeholder: add employee analytics results at docs/images/employee-analytics-results.png -->
-![Employee analytics results - add screenshot](docs/images/employee-analytics-results.png)
+![Employee analytics results](docs/images/employee-analytics-results.png)
 
 ## Customer-tier procedure
 
@@ -138,32 +138,3 @@ db/src/procedures/           Native HANA SQLScript procedures
 srv/                         CAP OData service definitions and handlers
 scripts/                     Sample-data generation utilities
 ```
-
-## Run locally
-
-### Prerequisites
-
-- Node.js LTS and npm
-- SAP CAP tooling (`@sap/cds-dk` is included as a development dependency)
-
-### Start the service
-
-```bash
-npm install
-npx cds watch
-```
-
-For local development, the project is configured to use SQLite. The native HANA calculation views and SQLScript procedure are deployed when targeting SAP HANA Cloud through the HDI container.
-
-## Build and deploy
-
-```bash
-npm run build
-npm run deploy
-```
-
-Deployment configuration - including the HDI container, XSUAA, destination service, and HTML5 application repository - is defined in [`mta.yaml`](mta.yaml).
-
-## Add screenshots
-
-Create a `docs/images/` directory and add the six image files referenced above. The placeholders will render automatically once the screenshots are present.
